@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hailey Qiu · Growth and AI builder</title>
+<meta name="description" content="HKU student who grew an education brand from zero to 22K followers in 9 months and ships working AI products. Looking for growth, BD and AI product roles at AI startups.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hailey Qiu · Growth and AI builder">
+<meta property="og:description" content="Grew an education brand to 22K followers in 9 months. Ships AI tools people actually use.">
+<meta property="og:image" content="https://hailey-studio.github.io/og.png">
+<meta property="og:url" content="https://hailey-studio.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f3f2ee">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap">
+<style>
+:root{
+  --bg:#f3f2ee; --paper:#ffffff; --ink:#0e0e0e; --muted:#5c5c58; --line:rgba(14,14,14,.12);
+  --lime:#cff250; --peach:#ffb38a; --sky:#a6d6ff;
+  --sans:'Inter',system-ui,-apple-system,'PingFang SC',sans-serif; --serif:'Instrument Serif',Georgia,serif;
+  --spring:cubic-bezier(.34,1.56,.64,1);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#111;color:var(--ink);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-underline-offset:3px;text-decoration-thickness:1px}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1200px;margin-left:auto;margin-right:auto;padding-left:clamp(16px,4vw,40px);padding-right:clamp(16px,4vw,40px)}
+.it{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:0}
+.muted{color:var(--muted)}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;background:var(--paper);font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.dot{width:8px;height:8px;border-radius:50%;display:inline-block;flex:none}
+
+/* the sheet that lifts off the dark footer */
+.sheet{position:relative;z-index:2;background:var(--bg);border-radius:0 0 clamp(28px,4vw,48px) clamp(28px,4vw,48px);box-shadow:0 30px 60px -30px rgba(0,0,0,.5)}
+
+/* nav */
+header{position:sticky;top:0;z-index:20;background:rgba(243,242,238,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.nav .logo{font-weight:700;font-size:18px;letter-spacing:-.02em;text-decoration:none}
+.nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-size:14.5px;font-weight:500}
+.nav ul a{text-decoration:none;color:var(--muted)}
+.nav ul a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font-size:15px;font-weight:500;text-decoration:none;border:0;cursor:pointer;transition:transform .25s var(--spring),background .2s,color .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.dark{background:var(--ink);color:#fff}
+.btn.light{background:#e6e5e0;color:var(--ink)}
+.btn.light:hover{background:#dcdbd5}
+.btn.small{padding:9px 16px;font-size:14px}
+@media (max-width:760px){.nav ul{display:none}}
+
+/* hero */
+.hero-top{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;padding-top:clamp(28px,5vw,56px);font-size:15px;font-weight:600;line-height:1.35}
+.hero-top span:nth-child(2){text-align:center}
+.hero-top span:nth-child(3){text-align:right}
+.name{position:relative;z-index:1;font-weight:700;font-size:clamp(64px,15.4vw,196px);line-height:.92;letter-spacing:-.055em;margin:clamp(12px,2vw,24px) 0 0;white-space:nowrap}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,330px);gap:clamp(24px,5vw,72px);align-items:end;padding:clamp(28px,4vw,48px) 0 clamp(40px,6vw,72px)}
+.rot{font-size:clamp(30px,3.6vw,48px);font-weight:600;letter-spacing:-.03em;line-height:1.12;margin:0 0 22px}
+.rot .slot{display:block;height:1.18em;overflow:hidden;position:relative}
+.rot .slot>span{position:absolute;left:0;top:0;white-space:nowrap;transition:transform .7s var(--spring),opacity .4s}
+.rot .slot>span.out{transform:translateY(-110%);opacity:0}
+.rot .slot>span.wait{transform:translateY(110%);opacity:0}
+.mark{background:linear-gradient(transparent 58%,var(--lime) 58% 92%,transparent 92%);padding:0 .06em}
+.lede{max-width:33em;color:var(--muted);margin:0 0 28px}
+.lede b{color:var(--ink);font-weight:600}
+.actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.actions .links{display:flex;gap:18px;margin-left:6px;font-size:15px;font-weight:500}
+.photo-card{position:relative;background:var(--paper);border-radius:28px;padding:20px;margin-top:-170px}
+.photo-card::before,.photo-card::after,.photo-card i::before,.photo-card i::after{content:"";position:absolute;width:11px;height:11px;border-radius:50%;border:1.5px solid #cfcfc9}
+.photo-card::before{left:12px;top:12px}.photo-card::after{right:12px;top:12px}
+.photo-card i::before{left:12px;bottom:12px}.photo-card i::after{right:12px;bottom:12px}
+.photo-card img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:999px}
+.photo-card .tagline{position:absolute;right:-10px;bottom:46px;background:var(--ink);color:#fff;font-size:13px;font-weight:500;padding:8px 14px;border-radius:999px;display:flex;gap:8px;align-items:center;transform:rotate(-4deg)}
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr}
+  .photo-card{max-width:280px;margin-top:0}
+  .hero-top{grid-template-columns:1fr 1fr}.hero-top span:nth-child(2){display:none}
+}
+
+/* marquee */
+.strip{overflow:hidden;padding:8px 0 clamp(48px,6vw,80px)}
+.strip-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:18px}
+.track{display:flex;gap:20px;width:max-content;animation:slide 60s linear infinite;padding-left:20px}
+.strip:hover .track{animation-play-state:paused}
+@keyframes slide{to{transform:translateX(-50%)}}
+.card{position:relative;flex:none;width:clamp(280px,32vw,440px);background:#e7e6e1;border-radius:28px;padding:44px 28px 0;text-decoration:none;overflow:hidden;transition:transform .35s var(--spring)}
+.card:hover{transform:translateY(-6px)}
+.card.wide{width:clamp(340px,44vw,620px)}
+.card img.shot{width:100%;height:clamp(200px,22vw,300px);object-fit:cover;object-position:top;border-radius:14px 14px 0 0;box-shadow:0 10px 30px -14px rgba(0,0,0,.35)}
+.card .ic{position:absolute;left:16px;top:14px;display:flex;gap:8px;align-items:center;font-size:13px;font-weight:600;background:var(--paper);padding:6px 12px 6px 8px;border-radius:999px}
+@media (prefers-reduced-motion:reduce){.track{animation:none}.strip{overflow-x:auto}}
+
+/* numbers */
+.numbers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.numbers div{padding:28px 20px 28px 0}
+.numbers div+div{padding-left:24px;border-left:1px solid var(--line)}
+.numbers strong{display:block;font-size:clamp(44px,5vw,68px);font-weight:700;letter-spacing:-.05em;line-height:1}
+.numbers span{display:block;margin-top:10px;font-size:14px;line-height:1.5;color:var(--muted)}
+@media (max-width:860px){.numbers{grid-template-columns:repeat(2,minmax(0,1fr))}.numbers div:nth-child(3){padding-left:0;border-left:0}.numbers div:nth-child(n+3){border-top:1px solid var(--line)}}
+
+section{padding-top:clamp(80px,10vw,140px)}
+.sec-title{font-size:clamp(44px,6vw,84px);font-weight:700;letter-spacing:-.05em;line-height:.95;margin:0}
+
+/* about */
+.about-head{text-align:center;margin-bottom:28px}
+.reveal-text{max-width:900px;margin:0 auto;text-align:center;font-size:clamp(22px,2.6vw,34px);font-weight:500;letter-spacing:-.02em;line-height:1.35}
+.reveal-text .w{transition:opacity .3s,filter .3s;opacity:.15;filter:blur(3px)}
+.reveal-text .w.on{opacity:1;filter:none}
+.about-more{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:center;margin-top:clamp(56px,8vw,96px)}
+.about-more p{margin:0 0 16px;color:var(--muted);max-width:32em}
+.about-more p b{color:var(--ink);font-weight:600}
+.fan{position:relative;height:340px}
+.fan figure{position:absolute;left:50%;top:10px;width:190px;margin:0 0 0 -95px;background:#fff;padding:8px 8px 12px;border-radius:14px;box-shadow:0 18px 36px -18px rgba(0,0,0,.4);transform:translate(0,40px) rotate(0) scale(.85);opacity:0;transition:transform .9s var(--spring),opacity .4s}
+.fan figure img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:8px}
+.fan figcaption{font-size:12.5px;line-height:1.35;margin-top:8px;display:flex;gap:6px;align-items:flex-start}
+.fan.in figure{opacity:1}
+.fan.in figure:nth-child(1){transform:translate(-150px,18px) rotate(-9deg);transition-delay:.05s}
+.fan.in figure:nth-child(2){transform:translate(0,0) rotate(1deg);transition-delay:.15s;z-index:2}
+.fan.in figure:nth-child(3){transform:translate(150px,22px) rotate(8deg);transition-delay:.25s}
+.fan.in figure:hover{z-index:3}
+.fan.in figure:nth-child(1):hover{transform:translate(-160px,0) rotate(-5deg) scale(1.05)}
+.fan.in figure:nth-child(2):hover{transform:translate(0,-16px) rotate(0) scale(1.05)}
+.fan.in figure:nth-child(3):hover{transform:translate(160px,4px) rotate(4deg) scale(1.05)}
+@media (max-width:860px){.about-more{grid-template-columns:1fr}.fan figure{width:150px;margin-left:-75px}.fan.in figure:nth-child(1){transform:translate(-105px,18px) rotate(-9deg)}.fan.in figure:nth-child(3){transform:translate(105px,22px) rotate(8deg)}.fan{height:300px}}
+
+/* projects */
+.proj-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:40px}
+.proj-head p{margin:0;color:var(--muted);max-width:26em}
+.project{background:var(--paper);border-radius:32px;padding:clamp(22px,3.4vw,44px);margin-bottom:20px}
+.p-meta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:16px}
+.chip{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;padding:5px 12px;border-radius:999px;background:var(--bg)}
+.project h3{font-size:clamp(36px,4.4vw,60px);font-weight:700;letter-spacing:-.045em;line-height:1;margin:0 0 10px}
+.project .sub{font-size:clamp(18px,1.6vw,21px);margin:0 0 28px;color:var(--muted);max-width:34em}
+.p-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(28px,4vw,56px);align-items:start}
+@media (max-width:900px){.p-grid{grid-template-columns:1fr}}
+.p-text p{margin:0 0 16px}
+.p-text h4{font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:24px 0 8px}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:30px minmax(0,1fr);gap:6px;padding:10px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.steps li::before{content:"0" counter(s);font-size:12.5px;font-weight:600;color:var(--muted);padding-top:3px}
+.steps b{font-weight:600}
+.tilt{transform-style:preserve-3d;transition:transform .5s var(--spring);will-change:transform}
+.shot-frame{border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 50px -30px rgba(0,0,0,.45)}
+.cap{font-size:13px;color:var(--muted);margin-top:10px}
+table{width:100%;border-collapse:collapse;font-size:15.5px;margin-top:4px}
+th{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;padding:8px 0;border-bottom:1.5px solid var(--ink)}
+td{padding:12px 0;border-bottom:1px solid var(--line)}
+th:not(:first-child),td:not(:first-child){text-align:right}
+td.before{color:var(--muted)}
+td.after{font-weight:700}
+td.after span{background:var(--lime);padding:2px 8px;border-radius:6px}
+.lesson{margin:24px 0 0;padding:20px 22px;border-radius:18px;background:var(--ink);color:#fff}
+.lesson strong{display:block;font-size:22px;font-weight:600;letter-spacing:-.02em;line-height:1.2;margin-bottom:6px}
+.lesson p{margin:0;font-size:15px;color:#c9c9c4}
+.stack{font-size:14px;color:var(--muted);margin-top:18px}
+.p-links{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:22px}
+.p-links small{font-size:13px;color:var(--muted)}
+.facts{list-style:none;margin:0;padding:0}
+.facts li{padding:12px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.facts li:first-child{border-top:1px solid var(--line)}
+.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.pair img{border-radius:12px;border:1px solid var(--line);width:100%}
+.tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+@media (max-width:860px){.tools{grid-template-columns:1fr}}
+.tool{display:grid;grid-template-columns:minmax(0,1fr) 140px;gap:20px;background:var(--bg);border-radius:22px;padding:24px}
+@media (max-width:440px){.tool{grid-template-columns:1fr}.tool>img{max-width:180px}}
+.tool .head{display:flex;gap:12px;align-items:center;margin-bottom:14px}
+.tool .head img{width:44px;height:44px;border-radius:12px}
+.tool h4{font-size:24px;font-weight:700;letter-spacing:-.03em;line-height:1.1;margin:0}
+.tool h4 small{display:block;font-size:14px;font-weight:500;color:var(--muted);margin-top:4px;letter-spacing:0}
+.tool p{margin:0 0 12px;font-size:15.5px}
+.tool ul{margin:0 0 16px;padding-left:18px;font-size:14.5px;color:var(--muted)}
+.tool>img{border-radius:10px;box-shadow:0 14px 28px -16px rgba(0,0,0,.4)}
+.small-builds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(20px,3vw,40px)}
+.small-builds div{padding:16px 0;border-bottom:1px solid var(--line)}
+.small-builds b{font-weight:600}
+.small-builds span.d{display:block;font-size:14.5px;color:var(--muted);margin-top:4px}
+@media (max-width:900px){.small-builds{grid-template-columns:1fr}}
+
+/* experience */
+.exp{list-style:none;margin:40px 0 0;padding:0}
+.exp li{display:grid;grid-template-columns:200px minmax(0,1fr);gap:8px 24px;padding:22px 0;border-top:1px solid var(--line)}
+.exp li:last-child{border-bottom:1px solid var(--line)}
+.exp .when{font-size:14.5px;color:var(--muted);padding-top:2px}
+.exp .role{font-weight:600}
+.exp .org{color:var(--muted)}
+.exp p{margin:6px 0 0;font-size:15.5px;max-width:42em}
+@media (max-width:720px){.exp li{grid-template-columns:1fr}}
+.edu{margin-top:48px;display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px;padding-bottom:clamp(80px,10vw,140px)}
+.edu h3{font-size:24px;font-weight:700;letter-spacing:-.03em;margin:0}
+.edu ul{list-style:none;margin:0;padding:0}
+.edu li{padding:10px 0;border-bottom:1px solid var(--line)}
+@media (max-width:720px){.edu{grid-template-columns:1fr;gap:8px}}
+
+/* footer revealed under the sheet */
+.foot{position:fixed;left:0;right:0;bottom:0;z-index:1;background:#111;color:#f3f2ee;overflow:hidden}
+.foot.static{position:relative}
+.foot .inner{padding-top:clamp(64px,9vw,120px);padding-bottom:28px;position:relative;z-index:1}
+.foot h2{font-size:clamp(56px,10vw,150px);font-weight:700;letter-spacing:-.055em;line-height:.9;margin:0 0 24px}
+.foot h2 .it{color:var(--peach)}
+.foot p{max-width:30em;color:#b9b9b4;margin:0 0 32px;font-size:18px}
+.foot .row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.magnet{display:inline-flex;align-items:center;gap:10px;background:var(--lime);color:var(--ink);font-weight:600;font-size:17px;padding:18px 30px;border-radius:999px;text-decoration:none;transition:transform .5s var(--spring)}
+.foot .btn.ghost{border:1px solid rgba(243,242,238,.35);color:#f3f2ee;background:transparent}
+.foot .btn.ghost:hover{background:#f3f2ee;color:var(--ink)}
+.foot .mail{display:inline-block;margin-top:28px;font-size:15px;color:#b9b9b4}
+.foot .base{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:56px;padding-top:18px;border-top:1px solid rgba(243,242,238,.14);font-size:13.5px;color:#8d8d88}
+.wordmark{position:absolute;left:-.04em;bottom:-.24em;font-size:clamp(140px,28vw,420px);font-weight:700;letter-spacing:-.06em;line-height:1;color:#1c1c1c;white-space:nowrap;pointer-events:none;user-select:none}
+.foot .pop{opacity:0;transform:translateY(40px) scale(.96);transition:transform .9s var(--spring),opacity .5s}
+.foot.in .pop{opacity:1;transform:none}
+.foot.in .pop:nth-child(2){transition-delay:.06s}.foot.in .pop:nth-child(3){transition-delay:.12s}.foot.in .pop:nth-child(4){transition-delay:.18s}
+
+/* scroll-in */
+.rise{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .9s var(--spring)}
+.rise.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rise,.foot .pop,.fan figure{opacity:1!important;transform:none!important;transition:none!important}.reveal-text .w{opacity:1;filter:none}}
+</style>
+</head>
+<body>
+
+<div class="sheet" id="sheet">
+<header id="top">
+  <div class="wrap nav">
+    <a class="logo" href="#top">Hailey Qiu</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="btn small dark" href="#contact">Coffee chat →</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="hero-top">
+      <span>Hey there, I'm</span>
+      <span>Open to growth, BD and<br>AI product roles</span>
+      <span>Based in Hong Kong<br>English / Mandarin</span>
+    </div>
+    <h1 class="name">Hailey Qiu</h1>
+
+    <div class="hero">
+      <div>
+        <p class="rot" aria-label="I grow audiences, ship AI tools, and pitch to rooms of 100+.">
+                    <span class="slot" aria-hidden="true" id="rot"><span>I grow <span class="mark">audiences.</span></span><span class="wait">I ship <span class="mark">AI tools.</span></span><span class="wait">I pitch to <span class="mark">rooms of 100+.</span></span></span>
+        </p>
+        <p class="lede">Social science student at HKU, class of 2028. In 9 months I grew an education brand <b>from zero to 22K followers</b> with no ad spend, and I build working AI products without an engineering background. Looking for <b>growth, business development and AI product roles at AI startups.</b></p>
+        <div class="actions">
+          <a class="btn dark" href="Hailey_Qiu_CV.pdf" target="_blank" rel="noopener">Download CV</a>
+          <a class="btn light" href="#projects">See projects →</a>
+          <span class="links"><a href="https://www.linkedin.com/in/hailey-qiu-464393347/" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/hailey-studio" target="_blank" rel="noopener">GitHub</a></span>
+        </div>
+      </div>
+      <div class="photo-card"><i></i>
+        <img src="assets/portrait-tall.webp" alt="Portrait of Hailey Qiu in a white linen blazer" width="640" height="960">
+        <span class="tagline"><span class="dot" style="background:var(--lime)"></span>HKU · class of 2028</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="strip" aria-label="Selected work">
+    <div class="wrap strip-head"><span class="pill"><span class="dot" style="background:var(--peach)"></span>Selected work</span><span class="muted" style="font-size:14px">Hover to pause</span></div>
+    <div class="track" id="track">
+      <a class="card wide" href="#p1"><span class="ic"><span class="dot" style="background:var(--lime)"></span>Buyer Finder</span><img class="shot" src="assets/buyer-finder.webp" alt="Buyer Finder results page"></a>
+      <a class="card" href="#p2"><span class="ic"><span class="dot" style="background:var(--peach)"></span>0 → 22K on RED</span><img class="shot" src="assets/red-notes.webp" alt="Pinned Xiaohongshu posts"></a>
+      <a class="card wide" href="#p3"><span class="ic"><img src="assets/icon-tunjinshou.webp" alt="" width="20" height="20" style="border-radius:5px">留学吞金兽</span><img class="shot" src="assets/tunjinshou-desktop.webp" alt="Study-abroad cost calculator"></a>
+      <a class="card" href="#p2"><span class="ic"><span class="dot" style="background:var(--sky)"></span>Talk at CUHK</span><img class="shot" src="assets/cuhk-talk.webp" alt="Lecture hall at CUHK"></a>
+      <a class="card wide" href="#p3"><span class="ic"><img src="assets/icon-sixian.webp" alt="" width="20" height="20" style="border-radius:5px">死线航空</span><img class="shot" src="assets/sixian-desktop.webp" alt="Application deadline planner"></a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="numbers rise">
+      <div><strong data-count="22" data-suffix="K">22K</strong><span>followers on Xiaohongshu, built from zero in 9 months</span></div>
+      <div><strong data-count="60" data-suffix="K">60K</strong><span>likes on the first post after a data-led pivot</span></div>
+      <div><strong data-count="4" data-suffix="+">4+</strong><span>AI projects shipped, live and open source</span></div>
+      <div><strong data-count="100" data-suffix="+">100+</strong><span>students at my talk at CUHK</span></div>
+    </div>
+  </div>
+
+  <section id="about" class="wrap">
+    <div class="about-head"><span class="pill"><span class="dot" style="background:var(--lime)"></span>About me</span></div>
+    <p class="reveal-text" id="story">I started on Xiaohongshu writing about personal growth, and almost nobody read it. The numbers showed one post about international schools far ahead of the rest, so I rebuilt the account around it. The first post after the pivot got 60K likes. Strangers in my DMs became parents I met in person, then paying clients.</p>
+    <div class="about-more">
+      <div class="rise">
+        <p>That path, <b>from being seen to being trusted</b>, is what I want to bring to an AI startup.</p>
+        <p>Then I started building. I'm not an engineer: I write the requirements and the evaluation rules, and direct AI coding assistants to build the thing. <b>Everything in Projects is live with a public link.</b></p>
+        <p>I've studied in four systems (a Chinese public school, an IB school, a US high school in California, and HKU), so switching contexts is normal for me.</p>
+      </div>
+      <div class="fan" id="fan">
+        <figure><img src="assets/pageant.webp" alt="Hailey on the red carpet at Miss Hong Kong 2026" loading="lazy"><figcaption><span class="dot" style="background:var(--peach);margin-top:4px"></span>Top 40, Miss Hong Kong 2026</figcaption></figure>
+        <figure><img src="assets/ski.webp" alt="Hailey waving on a ski slope with her snowboard" loading="lazy"><figcaption><span class="dot" style="background:var(--sky);margin-top:4px"></span>Snowboarding</figcaption></figure>
+        <figure><img src="assets/art-dog.webp" alt="Colourful acrylic painting of a greyhound" loading="lazy"><figcaption><span class="dot" style="background:var(--lime);margin-top:4px"></span>Painting. AP 2D Art: 5</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="wrap">
+    <div class="proj-head">
+      <h2 class="sec-title">Projects</h2>
+      <p>Each one has a live link and real numbers. Code is on <a href="https://github.com/hailey-studio" target="_blank" rel="noopener">GitHub</a>.</p>
+    </div>
+
+    <article class="project rise" id="p1">
+      <div class="p-meta"><span class="chip">01</span><span class="chip"><span class="dot" style="background:var(--lime)"></span>AI agent · Live</span></div>
+      <h3>Buyer Finder</h3>
+      <p class="sub">An AI agent that finds real overseas buyers for small exporters.</p>
+      <div class="p-grid">
+        <div class="p-text">
+          <p>Tell it what you sell and which country you want to sell to. It finds real local importers and distributors, shows the evidence for each company, and drafts the first outreach email.</p>
+          <p class="muted">Small exporters still find new clients through referrals, trade fairs and hours of manual searching, and the data online is often wrong. Checking companies one by one costs too much time.</p>
+          <h4>How it works</h4>
+          <ol class="steps">
+            <li><span><b>Search.</b> Chinese input is translated to English first, then it searches for local companies.</span></li>
+            <li><span><b>Filter.</b> Drops platforms, directories and manufacturers. Only companies that appear in real search results are kept, so the AI can't invent them.</span></li>
+            <li><span><b>Check evidence.</b> The AI must quote its source word for word; code then opens the page and checks the quote.</span></li>
+            <li><span><b>Confirm the website</b> by domain, language and phone area code.</span></li>
+            <li><span><b>Score.</b> The AI answers 4 yes/no questions and code computes the score, so the same answers always get the same score.</span></li>
+            <li><span><b>Draft the email.</b> Drafts only, never sends.</span></li>
+          </ol>
+          <p class="stack">Python · Streamlit · DeepSeek / Claude API · web search API · English and Chinese UI</p>
+        </div>
+        <div>
+          <div class="tilt"><div class="shot-frame"><img src="assets/buyer-finder.webp" alt="Buyer Finder results: stainless steel kitchen hardware to Spain, 10 buyers with fit scores, websites and evidence" loading="lazy" width="1400" height="1060"></div></div>
+          <p class="cap">A real search result, saved as a sample anyone can open.</p>
+          <h4 style="font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:26px 0 4px">Fixed test: kitchen hardware to Spain, 10 companies per run</h4>
+          <table>
+            <thead><tr><th>Metric</th><th>Before</th><th>After</th></tr></thead>
+            <tbody>
+              <tr><td>Fully verified buyers</td><td class="before">about 1</td><td class="after"><span>4</span></td></tr>
+              <tr><td>Website confirmed</td><td class="before">30%</td><td class="after"><span>60%</span></td></tr>
+              <tr><td>Quotes verified</td><td class="before">80%</td><td class="after"><span>100%</span></td></tr>
+              <tr><td>Cost per search</td><td class="before"></td><td class="after">about $0.01</td></tr>
+            </tbody>
+          </table>
+          <div class="lesson">
+            <strong>Better metrics don't mean right answers.</strong>
+            <p>A 20-case evaluation set caught 2 "fake buyers" that the metrics missed, so I added a "possible manufacturer" flag to fix it.</p>
+          </div>
+          <div class="p-links">
+            <a class="btn dark" href="https://buyer-finder-txxd9mw4zwaewnsz5tqo3h.streamlit.app" target="_blank" rel="noopener">Try the demo ↗</a>
+            <a class="btn light" href="https://github.com/hailey-studio/buyer-finder" target="_blank" rel="noopener">Code ↗</a>
+            <small>Free, 3 searches a day. "View a sample result" needs no password.</small>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="project rise" id="p2">
+      <div class="p-meta"><span class="chip">02</span><span class="chip"><span class="dot" style="background:var(--peach)"></span>Growth · Feb 2026 to now</span></div>
+      <h3>An education brand, <span class="it">from 0 to 22K</span></h3>
+      <p class="sub">My own Xiaohongshu (RED) account about international education.</p>
+      <div class="p-grid">
+        <div class="pair">
+          <img src="assets/red-profile.webp" alt="Xiaohongshu profile page of the account" loading="lazy">
+          <img src="assets/red-notes.webp" alt="Two pinned posts, one with 62K likes" loading="lazy" style="align-self:start">
+        </div>
+        <div class="p-text">
+          <ul class="facts">
+            <li><b>0 to 22K followers in 9 months</b>, zero ad spend.</li>
+            <li>Read post-level data, found the strongest topic and repositioned the account. The first post after the pivot reached <b>60K likes and 10K new followers</b>; the pinned video passed 875K views.</li>
+            <li>Built a content-to-revenue funnel: inbound DMs, then in-person consultations, then paying study-planning clients.</li>
+            <li>Paid brand partnerships with education platforms, and a co-created video with a Bilibili creator with 1M+ followers.</li>
+          </ul>
+          <figure style="margin:24px 0 0">
+            <div class="tilt"><img src="assets/cuhk-talk.webp" alt="Hailey speaking to a lecture hall of students at CUHK" loading="lazy" style="border-radius:14px"></div>
+            <figcaption class="cap">The audience moved offline too: 100+ students at my talk at CUHK, summer 2026.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </article>
+
+    <article class="project rise" id="p3">
+      <div class="p-meta"><span class="chip">03</span><span class="chip"><span class="dot" style="background:var(--sky)"></span>Web tools · Live</span></div>
+      <h3>Two free tools for students applying abroad</h3>
+      <p class="sub">Listed as Xiaohongshu mini-tools, so they open straight from a post.</p>
+      <div class="tools">
+        <div class="tool">
+          <div>
+            <div class="head"><img src="assets/icon-tunjinshou.webp" alt=""><h4>留学吞金兽<small>Study-abroad cost calculator</small></h4></div>
+            <p>Pick a destination (UK, US, Hong Kong, Singapore, Australia, Canada) and a degree. It estimates the total cost and how many months of work it takes to earn it back, as a shareable receipt.</p>
+            <ul><li>Free, no login</li><li>Offline build so it loads in mainland China: fonts bundled and subset, no external calls</li></ul>
+            <a class="btn small dark" href="https://hailey-studio.github.io/tools/" target="_blank" rel="noopener">Open ↗</a>
+          </div>
+          <img src="assets/tunjinshou-card.webp" alt="Shareable receipt: one-year taught master's in Hong Kong costs about RMB 316K, 53 months to earn back" loading="lazy">
+        </div>
+        <div class="tool">
+          <div>
+            <div class="head"><img src="assets/icon-sixian.webp" alt=""><h4>死线航空<small>Application deadline planner</small></h4></div>
+            <p>Enter your programmes and deadlines. It builds a countdown "boarding pass" with the next 3 things to do, conflict warnings, and a week-by-week timeline.</p>
+            <ul><li>Flags risks like late test scores or recommenders asked too late</li><li>Data stays in the user's own browser</li></ul>
+            <a class="btn small dark" href="https://hailey-studio.github.io/tools/" target="_blank" rel="noopener">Open ↗</a>
+          </div>
+          <img src="assets/sixian-card.webp" alt="Boarding pass: 24 days to deadline, next 3 tasks and a timeline for four programmes" loading="lazy">
+        </div>
+      </div>
+    </article>
+
+    <article class="project rise">
+      <div class="p-meta"><span class="chip">04</span><span class="chip">Smaller builds</span></div>
+      <h3>AI skills and tools I use myself</h3>
+      <p class="sub">I turn the way I work into tools AI can use.</p>
+      <div class="small-builds">
+        <div><b><a href="https://github.com/hailey-studio/voice-draft-tidy" target="_blank" rel="noopener">voice-draft-tidy ↗</a></b><span class="d">Open-source skill that tidies voice-dictated scripts. Finds the main point and logic gaps first, keeps the speaker's own words, never ghostwrites.</span></div>
+        <div><b>Essay deep-dive</b> <span class="chip" style="padding:2px 9px">In progress</span><span class="d">Asks students one or two questions at a time, like an interviewer, to dig up material for application essays.</span></div>
+        <div><b>Rebuild (重建)</b><span class="d">Academic English trainer with retell and imitation modes, built around an automatic error log. No streaks, no badges.</span></div>
+        <div><b>Qiqi Guide</b><span class="d">My personal dashboard: diary, notes and schedule. Its writing mode became a separate app, Xingbi.</span></div>
+        <div><b>VisionWall</b> <span class="chip" style="padding:2px 9px">Prototype</span><span class="d">Turns the lines I jot down each day and a vision board into my Mac wallpaper.</span></div>
+        <div><b>Zanhua</b> <span class="chip" style="padding:2px 9px">In progress</span><span class="d">Camera web page: a real hand gesture summons a blooming flower you can pin in your hair. The flowers are AI-generated video.</span></div>
+      </div>
+    </article>
+  </section>
+
+  <section id="experience" class="wrap">
+    <div class="proj-head" style="margin-bottom:0">
+      <h2 class="sec-title">Experience</h2>
+      <p>Full details in my <a href="Hailey_Qiu_CV.pdf" target="_blank" rel="noopener">CV</a>.</p>
+    </div>
+    <ul class="exp rise">
+      <li><span class="when">Jan – Mar 2027</span><div><span class="role">Team Lead</span> <span class="org">· IOT Data Hackathon 2027 (GS1 Hong Kong, Cyberport, HKSTP)</span><p>Recruited a cross-university team (computer engineering, AI security, quantitative finance). I own the problem research, business plan and final pitch.</p></div></li>
+      <li><span class="when">Feb 2026 – now</span><div><span class="role">Founder, study-abroad content and consulting</span> <span class="org">· Xiaohongshu (RED)</span><p>0 to 22K followers in 9 months; turned inbound DMs into paying clients and brand deals.</p></div></li>
+      <li><span class="when">Jun – Aug 2026</span><div><span class="role">Policy Research Intern</span> <span class="org">· Hong Kong Policy Research Institute, Shenzhen</span><p>Wrote a policy analysis on cross-border asset recovery. Presented research on the Qianhai marine economy under HKU's SIGC programme.</p></div></li>
+      <li><span class="when">Summer 2026</span><div><span class="role">Speaker</span> <span class="org">· The Chinese University of Hong Kong</span><p>Talked to 100+ visiting high school students from Guangzhou about studying in Hong Kong. Also a guest speaker for ElitePrime Family Office.</p></div></li>
+      <li><span class="when">2026</span><div><span class="role">Top 40</span> <span class="org">· Miss Hong Kong Pageant (TVB)</span><p>I was afraid of cameras, so I signed up.</p></div></li>
+      <li><span class="when">2024 – now</span><div><span class="role">Tutor and application essay coach</span> <span class="org">· Independent and partner institution</span><p>Coached 10 students; essays I edited led to offers from Brown University and a UK top-5 university.</p></div></li>
+    </ul>
+    <div class="edu rise">
+      <h3>Education</h3>
+      <ul>
+        <li><b>The University of Hong Kong</b> <span class="muted">· Bachelor of Social Sciences, 2024 – 2028</span><br><span class="muted" style="font-size:15px">Politics and Public Administration; Economics</span></li>
+        <li><b>Valley Christian High School</b>, California <span class="muted">· 2021 – 2024</span><br><span class="muted" style="font-size:15px">DECA vice president; led a 1,000+ attendee cultural festival; AP Microeconomics teaching assistant</span></li>
+      </ul>
+    </div>
+  </section>
+</main>
+</div>
+
+<div id="spacer" aria-hidden="true"></div>
+
+<footer class="foot" id="contact">
+  <div class="wordmark" aria-hidden="true">Hailey</div>
+  <div class="wrap inner">
+    <h2 class="pop">Coffee <span class="it">chat?</span></h2>
+    <p class="pop">Building something in AI and need someone who can grow it? Tell me what you're working on. I reply within 48 hours.</p>
+    <div class="row pop">
+      <a class="magnet" id="magnet" href="mailto:zihuiqz@hotmail.com?subject=Coffee%20chat">Book a coffee chat <span aria-hidden="true">☕</span></a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/hailey-qiu-464393347/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="btn ghost" href="https://github.com/hailey-studio" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="btn ghost" href="Hailey_Qiu_CV.pdf" target="_blank" rel="noopener">CV</a>
+    </div>
+    <div class="pop"><a class="mail" href="mailto:zihuiqz@hotmail.com">zihuiqz@hotmail.com</a></div>
+    <div class="base"><span>© 2026 Hailey Qiu. Designed by me, built with AI.</span><span>中文版即将上线</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine = window.matchMedia('(pointer: fine)').matches;
+
+  /* rotating line */
+  var slot=document.getElementById('rot'), items=slot?[].slice.call(slot.children):[], i=0;
+  if(items.length && !reduce){
+    setInterval(function(){
+      var cur=items[i], nxt=items[(i+1)%items.length];
+      cur.className='out'; nxt.className='';
+      setTimeout(function(){cur.className='wait'},700);
+      i=(i+1)%items.length;
+    },2600);
+  }
+
+  /* duplicate marquee cards for a seamless loop */
+  var tr=document.getElementById('track');
+  if(tr){[].slice.call(tr.children).forEach(function(c){var k=c.cloneNode(true);k.setAttribute('aria-hidden','true');k.tabIndex=-1;tr.appendChild(k)})}
+
+  /* scroll-in + count up + fan */
+  function countUp(el){
+    var n=+el.dataset.count, suf=el.dataset.suffix||'', t0=performance.now();
+    (function step(t){var p=Math.min(1,(t-t0)/1400), e=1-Math.pow(1-p,3); el.textContent=Math.round(n*e)+suf; if(p<1)requestAnimationFrame(step)})(t0);
+  }
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(!e.isIntersecting)return; var el=e.target; el.classList.add('in'); io.unobserve(el);
+    if(!reduce) el.querySelectorAll('[data-count]').forEach(countUp);
+  })},{threshold:.15});
+  document.querySelectorAll('.rise,#fan').forEach(function(el){io.observe(el)});
+
+  /* about story: words come into focus as you scroll */
+  var story=document.getElementById('story');
+  if(story && !reduce){
+    var words=story.textContent.trim().split(/\s+/);
+    story.innerHTML=words.map(function(w){return '<span class="w">'+w+'</span>'}).join(' ');
+    var ws=story.querySelectorAll('.w');
+    var upd=function(){
+      var r=story.getBoundingClientRect(), vh=innerHeight;
+      var p=Math.max(0,Math.min(1,(vh*0.85-r.top)/(r.height+vh*0.35)));
+      var n=Math.round(p*ws.length*1.15);
+      for(var k=0;k<ws.length;k++) ws[k].classList.toggle('on',k<n);
+    };
+    addEventListener('scroll',upd,{passive:true}); upd();
+  }
+
+  /* tilt on screenshots */
+  if(fine && !reduce){
+    document.querySelectorAll('.tilt').forEach(function(t){
+      t.addEventListener('mousemove',function(e){var r=t.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;t.style.transform='perspective(900px) rotateY('+(x*7)+'deg) rotateX('+(-y*7)+'deg)'});
+      t.addEventListener('mouseleave',function(){t.style.transform=''});
+    });
+  }
+
+  /* footer: revealed under the sheet when it fits the screen */
+  var foot=document.getElementById('contact'), spacer=document.getElementById('spacer');
+  function lay(){
+    foot.classList.remove('static'); spacer.style.height=foot.offsetHeight+'px';
+    if(foot.offsetHeight>innerHeight-40){foot.classList.add('static');spacer.style.height='0px'}
+  }
+  addEventListener('resize',lay); lay(); if(document.fonts)document.fonts.ready.then(lay);
+  var fio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)foot.classList.add('in')})},{threshold:.01});
+  fio.observe(spacer.offsetHeight?spacer:foot);
+  if(reduce)foot.classList.add('in');
+
+  /* magnet button */
+  var m=document.getElementById('magnet');
+  if(m && fine && !reduce){
+    foot.addEventListener('mousemove',function(e){var r=m.getBoundingClientRect(),dx=e.clientX-(r.left+r.width/2),dy=e.clientY-(r.top+r.height/2),d=Math.hypot(dx,dy);
+      m.style.transform=d<180?'translate('+dx*.25+'px,'+dy*.3+'px)':''});
+    foot.addEventListener('mouseleave',function(){m.style.transform=''});
+  }
+})();
+</script>
+</body>
+</html>
