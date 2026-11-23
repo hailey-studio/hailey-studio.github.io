@@ -62,8 +62,8 @@ header{position:sticky;top:0;z-index:20;background:rgba(243,242,238,.86);backdro
 .name{position:relative;z-index:1;font-weight:700;font-size:clamp(64px,15.4vw,196px);line-height:.92;letter-spacing:-.055em;margin:clamp(12px,2vw,24px) 0 0;white-space:nowrap}
 .hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,330px);gap:clamp(24px,5vw,72px);align-items:end;padding:clamp(28px,4vw,48px) 0 clamp(40px,6vw,72px)}
 .rot{font-size:clamp(30px,3.6vw,48px);font-weight:600;letter-spacing:-.03em;line-height:1.12;margin:0 0 22px}
-.rot .slot{display:block;height:1.18em;overflow:hidden;position:relative}
-.rot .slot>span{position:absolute;left:0;top:0;white-space:nowrap;transition:transform .7s var(--spring),opacity .4s}
+.rot .slot{display:block;height:1.42em;overflow:hidden;position:relative}
+.rot .slot>span{position:absolute;left:0;top:0;line-height:1.3;padding-bottom:.1em;white-space:nowrap;transition:transform .7s var(--spring),opacity .4s}
 .rot .slot>span.out{transform:translateY(-110%);opacity:0}
 .rot .slot>span.wait{transform:translateY(110%);opacity:0}
 .mark{background:linear-gradient(transparent 58%,var(--lime) 58% 92%,transparent 92%);padding:0 .06em}
@@ -71,7 +71,7 @@ header{position:sticky;top:0;z-index:20;background:rgba(243,242,238,.86);backdro
 .lede b{color:var(--ink);font-weight:600}
 .actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
 .actions .links{display:flex;gap:18px;margin-left:6px;font-size:15px;font-weight:500}
-.photo-card{position:relative;background:var(--paper);border-radius:28px;padding:20px;margin-top:-170px}
+.photo-card{position:relative;background:var(--paper);border-radius:28px;padding:20px}
 .photo-card::before,.photo-card::after,.photo-card i::before,.photo-card i::after{content:"";position:absolute;width:11px;height:11px;border-radius:50%;border:1.5px solid #cfcfc9}
 .photo-card::before{left:12px;top:12px}.photo-card::after{right:12px;top:12px}
 .photo-card i::before{left:12px;bottom:12px}.photo-card i::after{right:12px;bottom:12px}
@@ -281,7 +281,7 @@ td.after span{background:var(--lime);padding:2px 8px;border-radius:6px}
     <div class="numbers rise">
       <div><strong data-count="22" data-suffix="K">22K</strong><span>followers on Xiaohongshu, built from zero in 9 months</span></div>
       <div><strong data-count="60" data-suffix="K">60K</strong><span>likes on the first post after a data-led pivot</span></div>
-      <div><strong data-count="4" data-suffix="+">4+</strong><span>AI projects shipped, live and open source</span></div>
+      <div><strong>1 → 4</strong><span>fully verified buyers per Buyer Finder search, after six test rounds</span></div>
       <div><strong data-count="100" data-suffix="+">100+</strong><span>students at my talk at CUHK</span></div>
     </div>
   </div>
@@ -425,7 +425,7 @@ td.after span{background:var(--lime);padding:2px 8px;border-radius:6px}
       <p>Full details in my <a href="Hailey_Qiu_CV.pdf" target="_blank" rel="noopener">CV</a>.</p>
     </div>
     <ul class="exp rise">
-      <li><span class="when">Jan – Mar 2027</span><div><span class="role">Team Lead</span> <span class="org">· IOT Data Hackathon 2027 (GS1 Hong Kong, Cyberport, HKSTP)</span><p>Recruited a cross-university team (computer engineering, AI security, quantitative finance). I own the problem research, business plan and final pitch.</p></div></li>
+      <li><span class="when">Jan – Mar 2027<br><span class="chip" style="margin-top:6px;background:var(--paper)"><span class="dot" style="background:var(--sky)"></span>Upcoming</span></span><div><span class="role">Team Lead</span> <span class="org">· IOT Data Hackathon 2027 (GS1 Hong Kong, Cyberport, HKSTP)</span><p>Competition starts in January 2027. I recruited a cross-university team (computer engineering, AI security, quantitative finance) and will own the problem research, business plan and final pitch.</p></div></li>
       <li><span class="when">Feb 2026 – now</span><div><span class="role">Founder, study-abroad content and consulting</span> <span class="org">· Xiaohongshu (RED)</span><p>0 to 22K followers in 9 months; turned inbound DMs into paying clients and brand deals.</p></div></li>
       <li><span class="when">Jun – Aug 2026</span><div><span class="role">Policy Research Intern</span> <span class="org">· Hong Kong Policy Research Institute, Shenzhen</span><p>Wrote a policy analysis on cross-border asset recovery. Presented research on the Qianhai marine economy under HKU's SIGC programme.</p></div></li>
       <li><span class="when">Summer 2026</span><div><span class="role">Speaker</span> <span class="org">· The Chinese University of Hong Kong</span><p>Talked to 100+ visiting high school students from Guangzhou about studying in Hong Kong. Also a guest speaker for ElitePrime Family Office.</p></div></li>
@@ -451,12 +451,12 @@ td.after span{background:var(--lime);padding:2px 8px;border-radius:6px}
     <h2 class="pop">Coffee <span class="it">chat?</span></h2>
     <p class="pop">Building something in AI and need someone who can grow it? Tell me what you're working on. I reply within 48 hours.</p>
     <div class="row pop">
-      <a class="magnet" id="magnet" href="mailto:zihuiqz@hotmail.com?subject=Coffee%20chat">Book a coffee chat <span aria-hidden="true">☕</span></a>
+      <a class="magnet" id="magnet" href="mailto:hailey.qiu@connect.hku.hk?subject=Coffee%20chat">Book a coffee chat <span aria-hidden="true">☕</span></a>
       <a class="btn ghost" href="https://www.linkedin.com/in/hailey-qiu-464393347/" target="_blank" rel="noopener">LinkedIn ↗</a>
       <a class="btn ghost" href="https://github.com/hailey-studio" target="_blank" rel="noopener">GitHub ↗</a>
       <a class="btn ghost" href="Hailey_Qiu_CV.pdf" target="_blank" rel="noopener">CV</a>
     </div>
-    <div class="pop"><a class="mail" href="mailto:zihuiqz@hotmail.com">zihuiqz@hotmail.com</a></div>
+    <div class="pop"><a class="mail" href="mailto:hailey.qiu@connect.hku.hk">hailey.qiu@connect.hku.hk</a></div>
     <div class="base"><span>© 2026 Hailey Qiu. Designed by me, built with AI.</span><span>中文版即将上线</span></div>
   </div>
 </footer>
