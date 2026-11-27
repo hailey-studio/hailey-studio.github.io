@@ -71,12 +71,11 @@ header{position:sticky;top:0;z-index:20;background:rgba(243,242,238,.86);backdro
 .lede b{color:var(--ink);font-weight:600}
 .actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
 .actions .links{display:flex;gap:18px;margin-left:6px;font-size:15px;font-weight:500}
-.photo-card{position:relative;background:var(--paper);border-radius:28px;padding:20px}
-.photo-card::before,.photo-card::after,.photo-card i::before,.photo-card i::after{content:"";position:absolute;width:11px;height:11px;border-radius:50%;border:1.5px solid #cfcfc9}
-.photo-card::before{left:12px;top:12px}.photo-card::after{right:12px;top:12px}
-.photo-card i::before{left:12px;bottom:12px}.photo-card i::after{right:12px;bottom:12px}
-.photo-card img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:999px}
-.photo-card .tagline{position:absolute;right:-10px;bottom:46px;background:var(--ink);color:#fff;font-size:13px;font-weight:500;padding:8px 14px;border-radius:999px;display:flex;gap:8px;align-items:center;transform:rotate(-4deg)}
+.photo-card{position:relative;margin:16px 10px 10px 0}
+.photo-card::before{content:"";position:absolute;inset:0;border-radius:22px;background:var(--ink);transform:rotate(-5deg)}
+.photo-card img{position:relative;display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;border-radius:22px;transform:rotate(2deg);box-shadow:0 24px 50px -24px rgba(0,0,0,.55)}
+.photo-card .tagline{position:absolute;z-index:1;right:-14px;bottom:24px;background:var(--lime);color:var(--ink);font-size:13px;font-weight:500;padding:8px 14px;border-radius:999px;display:flex;gap:8px;align-items:center;transform:rotate(-6deg)}
+.photo-card .tagline .dot{background:var(--ink)!important}
 @media (max-width:860px){
   .hero{grid-template-columns:1fr}
   .photo-card{max-width:280px;margin-top:0}
@@ -179,6 +178,10 @@ td.after span{background:var(--lime);padding:2px 8px;border-radius:6px}
 .top-posts img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:10px;border:1px solid var(--line)}
 .top-posts p{margin:8px 0 0;font-size:13px;line-height:1.4}
 .top-posts small{display:block;margin-top:3px;color:var(--muted);font-size:12.5px}
+.collab{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:14px;align-items:center;color:inherit;text-decoration:none;font-size:14.5px;line-height:1.5}
+.collab img{width:100%;border-radius:10px;border:1px solid var(--line)}
+.collab small{display:block;margin-top:4px;color:var(--muted);font-size:12.5px}
+@media (max-width:520px){.collab{grid-template-columns:1fr}}
 .insight{margin:20px 0 0;font-size:15px;line-height:1.6;padding-left:14px;border-left:3px solid var(--peach)}
 @media (max-width:520px){.stat-row{grid-template-columns:1fr}}
 .tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
@@ -249,6 +252,18 @@ td.after span{background:var(--lime);padding:2px 8px;border-radius:6px}
 .rise{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .9s var(--spring)}
 .rise.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.rise,.foot .pop,.fan figure{opacity:1!important;transform:none!important;transition:none!important}.reveal-text .w{opacity:1;filter:none}}
+.am-head{display:flex;justify-content:space-between;align-items:center;margin:36px 0 18px;padding-top:18px;border-top:1px solid var(--line)}
+.am-head h3{margin:0;font-size:15px;font-weight:600}
+.am-nav{display:flex;gap:8px}
+.am-btn{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--paper);font-size:16px;cursor:pointer;transition:background .2s,transform .2s}
+.am-btn:hover{background:var(--ink);color:#fff;transform:scale(1.06)}
+.vc{position:relative;height:clamp(330px,38vw,430px);perspective:1400px;overflow:hidden;touch-action:pan-y;cursor:pointer}
+.vc .am-card{position:absolute;left:50%;top:10px;width:clamp(200px,24vw,280px);margin:0;transition:transform .8s cubic-bezier(.2,.8,.2,1),opacity .5s,filter .5s}
+.art .vc img{aspect-ratio:4/5;object-fit:cover;height:auto;box-shadow:0 20px 40px -18px rgba(0,0,0,.5)}
+.vc figcaption{display:none}
+.vc-cap{font-size:13px;color:var(--muted);margin:8px 0 36px;line-height:1.4;min-height:1.4em;text-align:center}
+.vc-cap b{color:var(--ink);font-weight:600}
+.vc-cap .st{margin-left:8px;font-size:12px;opacity:.7}
 </style>
 </head>
 <body>
@@ -288,7 +303,7 @@ td.after span{background:var(--lime);padding:2px 8px;border-radius:6px}
           <span class="links"><a href="https://www.linkedin.com/in/hailey-qiu-464393347/" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/hailey-studio" target="_blank" rel="noopener">GitHub</a></span>
         </div>
       </div>
-      <div class="photo-card"><i></i>
+      <div class="photo-card">
         <img src="assets/portrait-tall.webp" alt="Portrait of Hailey Qiu in a white linen blazer" width="640" height="960">
         <span class="tagline"><span class="dot" style="background:var(--lime)"></span>HKU · class of 2028</span>
       </div>
@@ -391,7 +406,7 @@ td.after span{background:var(--lime);padding:2px 8px;border-radius:6px}
         <div>
         <div class="pair">
           <img src="assets/red-profile.webp" alt="RedNote profile page of the account" loading="lazy">
-          <img src="assets/red-notes.webp" alt="Two pinned posts, one with 62K likes" loading="lazy" style="align-self:start">
+          <img src="assets/red-audience.jpg" alt="RedNote fan profile: 86% women, ages 25–44, top cities Shanghai, Beijing, Shenzhen" loading="lazy" style="align-self:start">
         </div>
         <div class="red-data">
           <div class="stat-row">
@@ -410,12 +425,19 @@ td.after span{background:var(--lime);padding:2px 8px;border-radius:6px}
         </div>
         </div>
         <div class="p-text">
+          <h4 style="margin-top:0">About the account</h4>
+          <p>A vertical account about international education, written for parents: what life inside international schools is really like, studying at HKU, and how families weigh the cost of an education abroad. I speak from experience, as someone who went through an international middle school, a US high school and now HKU.</p>
           <ul class="facts">
             <li><b>0 to 22K followers</b>, zero ad spend.</li>
             <li>Read post-level data, found the strongest topic and repositioned the account. The first post after the pivot reached <b>60K likes and 10K new followers</b>.</li>
             <li>Built a content-to-revenue funnel: a RedNote fan group of <b>203 members</b>, then private WeChat, then <b>40 parents paying for one-on-one consultations</b>.</li>
-            <li>Paid brand partnerships with education platforms, and a co-created video with a Bilibili creator with 1M+ followers.</li>
+            <li>Invited as a guest speaker at offline events, and paid brand partnerships with education platforms.</li>
           </ul>
+          <h4>Collaboration</h4>
+          <a class="collab" href="https://www.bilibili.com/video/BV1iBgQ6eEcb" target="_blank" rel="noopener">
+            <img src="assets/bili-collab.jpg" alt="Cover of the Bilibili video podcast featuring Hailey and 可妈可吗" loading="lazy">
+            <span><b>Guest on 可妈可吗's video podcast</b> on Bilibili (1.21M followers). A conversation about three sisters who got into Columbia, Tsinghua and HKU, sharing what worked in their family's approach to education and our own learning experiences.<small>Jul 23, 2026 · 392K views</small></span>
+          </a>
           <figure style="margin:24px 0 0">
             <div class="tilt"><img src="assets/cuhk-talk.webp" alt="Hailey speaking to a lecture hall of students at CUHK" loading="lazy" style="border-radius:14px"></div>
             <figcaption class="cap">The audience moved offline too: 100+ students at my talk at CUHK, summer 2026.</figcaption>
@@ -493,24 +515,22 @@ td.after span{background:var(--lime);padding:2px 8px;border-radius:6px}
       <p>What I do for fun.</p>
     </div>
     <div class="art-row rise">
-      <figure style="flex:1.333"><img src="assets/art/beetles.webp" alt="Figure with beetles, coloured pencil and gold" loading="lazy"><figcaption><b>Figure with beetles</b> · coloured pencil and gold</figcaption></figure>
       <figure style="flex:0.718"><img src="assets/art/gold-fish.webp" alt="Blue figure with gold fish, coloured pencil" loading="lazy"><figcaption><b>Blue figure with gold fish</b> · coloured pencil</figcaption></figure>
       <figure style="flex:0.821"><img src="assets/art/greyhound.webp" alt="Greyhound, acrylic on canvas" loading="lazy"><figcaption><b>Greyhound</b> · acrylic on canvas</figcaption></figure>
-      <figure style="flex:0.789"><img src="assets/art/flowers-gold.webp" alt="Flowers in gold, acrylic and oil" loading="lazy"><figcaption><b>Flowers in gold</b> · acrylic and oil</figcaption></figure>
+      <figure style="flex:0.803"><img src="assets/art/two-faces.webp" alt="Two faces, digital" loading="lazy"><figcaption><b>Two faces</b> · digital</figcaption></figure>
+      <figure style="flex:0.773"><img src="assets/art/beads.webp" alt="Beads on canvas, mixed media" loading="lazy"><figcaption><b>Beads on canvas</b> · mixed media</figcaption></figure>
     </div>
-    <details>
-      <summary><span class="plus">+</span>More drawings (8)</summary>
-      <div class="art-more">
-        <figure><img src="assets/art/gold-web.webp" alt="Blue figure with gold web, coloured pencil and gold" loading="lazy"><figcaption><b>Blue figure with gold web</b> · coloured pencil and gold</figcaption></figure>
-        <figure><img src="assets/art/rose.webp" alt="Rose, digital" loading="lazy"><figcaption><b>Rose</b> · digital</figcaption></figure>
-        <figure><img src="assets/art/vase.webp" alt="Glass vase, coloured pencil" loading="lazy"><figcaption><b>Glass vase</b> · coloured pencil</figcaption></figure>
-        <figure><img src="assets/art/abstract-oil.webp" alt="Abstract, oil" loading="lazy"><figcaption><b>Abstract</b> · oil</figcaption></figure>
-        <figure><img src="assets/art/beads.webp" alt="Beads on canvas, mixed media" loading="lazy"><figcaption><b>Beads on canvas</b> · mixed media</figcaption></figure>
-        <figure><img src="assets/art/two-faces.webp" alt="Two faces, digital" loading="lazy"><figcaption><b>Two faces</b> · digital</figcaption></figure>
-        <figure><img src="assets/art/portrait-girl.webp" alt="Portrait, iPad" loading="lazy"><figcaption><b>Portrait</b> · iPad</figcaption></figure>
-        <figure><img src="assets/art/portrait-sister.webp" alt="My sister, iPad" loading="lazy"><figcaption><b>My sister</b> · iPad</figcaption></figure>
-      </div>
-    </details>
+    <div class="am-head"><h3>More drawings</h3><div class="am-nav"><button class="am-btn" data-dir="-1" aria-label="Previous drawing">&larr;</button><button class="am-btn" data-dir="1" aria-label="Next drawing">&rarr;</button></div></div>
+    <div class="vc" aria-roledescription="carousel" aria-label="More drawings. Click to pause or resume.">
+      <figure class="am-card"><img src="assets/art/beetles.webp" alt="Figure with beetles, coloured pencil and gold" loading="lazy" draggable="false"><figcaption><b>Figure with beetles</b> · coloured pencil and gold</figcaption></figure>
+      <figure class="am-card"><img src="assets/art/flowers-gold.webp" alt="Flowers in gold, acrylic and oil" loading="lazy" draggable="false"><figcaption><b>Flowers in gold</b> · acrylic and oil</figcaption></figure>
+      <figure class="am-card"><img src="assets/art/gold-web.webp" alt="Blue figure with gold web, coloured pencil and gold" loading="lazy" draggable="false"><figcaption><b>Blue figure with gold web</b> · coloured pencil and gold</figcaption></figure>
+      <figure class="am-card"><img src="assets/art/rose.webp" alt="Rose, digital" loading="lazy" draggable="false"><figcaption><b>Rose</b> · digital</figcaption></figure>
+      <figure class="am-card"><img src="assets/art/vase.webp" alt="Glass vase, coloured pencil" loading="lazy" draggable="false"><figcaption><b>Glass vase</b> · coloured pencil</figcaption></figure>
+      <figure class="am-card"><img src="assets/art/abstract-oil.webp" alt="Abstract, oil" loading="lazy" draggable="false"><figcaption><b>Abstract</b> · oil</figcaption></figure>
+      <figure class="am-card"><img src="assets/art/portrait-girl.webp" alt="Portrait, iPad" loading="lazy" draggable="false"><figcaption><b>Portrait</b> · iPad</figcaption></figure>
+    </div>
+    <p class="vc-cap" aria-live="polite"></p>
   </section>
 </main>
 </div>
@@ -605,6 +625,27 @@ td.after span{background:var(--lime);padding:2px 8px;border-radius:6px}
       m.style.transform=d<180?'translate('+dx*.25+'px,'+dy*.3+'px)':''});
     foot.addEventListener('mouseleave',function(){m.style.transform=''});
   }
+})();
+</script>
+<script>
+/* Art carousel: rotates on its own, click to pause/resume */
+(function(){
+  var vc=document.querySelector('.vc');if(!vc)return;
+  var cards=[].slice.call(vc.querySelectorAll('.am-card')),cap=document.querySelector('.vc-cap'),n=cards.length,ci=0;
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches,paused=reduce;
+  function lay(){cards.forEach(function(c,i){var d=((i-ci)%n+n)%n;if(d>n/2)d-=n;var ad=Math.abs(d);
+    c.style.transform='translateX(calc(-50% + '+(d*58)+'%)) translateZ('+(-ad*160)+'px) rotateY('+(d===0?0:(d>0?-40:40))+'deg)';
+    c.style.zIndex=10-ad;c.style.opacity=ad>2?0:1;c.style.filter=ad?'brightness(.82)':'none'});
+    cap.innerHTML=cards[ci].querySelector('figcaption').innerHTML+'<span class="st">'+(paused?'❚❚ paused · click to play':'')+'</span>'}
+  function go(d){ci=(ci+d+n)%n;lay()}
+  lay();
+  setInterval(function(){if(!paused)go(1)},2600);
+  var sx=null,moved=false;
+  vc.addEventListener('pointerdown',function(e){sx=e.clientX;moved=false});
+  vc.addEventListener('pointerup',function(e){if(sx!==null&&Math.abs(e.clientX-sx)>40){moved=true;paused=true;go(e.clientX<sx?1:-1)}sx=null});
+  vc.addEventListener('click',function(e){if(moved)return;var c=e.target.closest('.am-card'),i=cards.indexOf(c);
+    if(c&&i!==ci){ci=i;paused=true}else{paused=!paused}lay()});
+  document.querySelectorAll('.am-btn').forEach(function(b){b.addEventListener('click',function(){paused=true;go(+b.dataset.dir)})});
 })();
 </script>
 </body>
